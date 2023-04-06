@@ -1,9 +1,9 @@
 class Merchant 
-  attr_accessor :id, :name, :items
+  attr_reader :id, :name
 
-  def initialize(name)
-    @id = id
-    @name = name
-    @items = items
+  def initialize(data)
+    # require 'pry'; binding.pry
+    @id = data[0][:id]
+    @name = data[0][:attributes][:name]
   end
 end
