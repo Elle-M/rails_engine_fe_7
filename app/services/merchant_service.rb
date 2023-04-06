@@ -1,6 +1,3 @@
-require 'faraday'
-require 'json'
-
 class MerchantService
 
   def fetch_merchants
@@ -8,10 +5,13 @@ class MerchantService
     parse(response)
   end
 
-  private 
+  def fetch_merchant_name(merchant_id)
+    response = conn.get("/api/v1/merchant")
+    parse(response)
+  end
 
   def conn
-    @conn ||= Faraday.new( url "https://localhost:3000")
+    @conn = Faraday.new(url: "http://localhost:3000")
   end
 
   def parse(response)
