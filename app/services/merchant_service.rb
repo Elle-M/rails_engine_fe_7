@@ -6,7 +6,15 @@ class MerchantService
   end
 
   def fetch_merchant_name(merchant_id)
-    response = conn.get("/api/v1/merchant")
+    # require 'pry'; binding.pry
+    #merchant id is returning merchant object
+    response = conn.get("/api/v1/merchants")
+    parse(response)
+  end
+
+  def fetch_merchant_items(merchant_id) #merchant id is returning merchant object
+    response = conn.get("/api/v1/merchants/1/items")
+    #hard coded to test- working!
     parse(response)
   end
 
