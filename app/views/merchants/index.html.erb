@@ -2,8 +2,6 @@
 
 <ul>
   <% @merchants.each do |merchant| %>
- require 'pry'; binding.pry
     <li><%= link_to merchant.name, merchant_path(merchant) %></li>
   <% end %>
 </ul>
-#something is wrong here need to also remember.
